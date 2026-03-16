@@ -298,3 +298,16 @@ const soloIniziali = parole.map((p) => {
   return p.charAt(0)
 })
 // ULTRA PRO MAX VERSION -> const soloIniziali = parole.map((p) => p.charAt(0)) rifacendosi alla sintassi monoriga + return delle funzioni
+
+// FILTER -> serve a filtrare un array; dato un array di partenza, otterrò un array finale
+// in cui non necessariamente avrò tutti gli elementi dell'array iniziale
+
+const arrayFiltrato = names.filter((name) => {
+  // il filter funziona tramite valore booleani
+  if (name.endsWith("a")) {
+    //ritorna un array di soli nomi che finiscono con la lettera a
+    return true
+  } else {
+    return false
+  }
+})
