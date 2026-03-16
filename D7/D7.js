@@ -253,10 +253,17 @@ console.log(movie2000)
 
 const totalYearMovies = movies.reduce((acc, elem) => acc + parseInt(elem.Year), 0)
 console.log(totalYearMovies)
+
 /* ESERCIZIO 14 (find)
   Scrivi una funzione per ottenere dall'array fornito uno specifico film (la funzione riceve un imdbID come parametro).
 */
+const findSpecificMovies = movies.find((movie) => movie.imdbID === "tt0100054")
+console.log(findSpecificMovies)
 
 /* ESERCIZIO 15 (findIndex)
-  Scrivi una funzione per ottenere dall'array fornito l'indice del primo film uscito nell'anno fornito come parametro.
+Scrivi una funzione per ottenere dall'array fornito l'indice del primo film uscito nell'anno fornito come parametro.
 */
+const findSpecificIndex = movies.findIndex((movie) => movie.Year === "2012")
+console.log(findSpecificIndex)
+
+console.log(movies[findSpecificIndex])
