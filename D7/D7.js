@@ -221,11 +221,15 @@ console.log(oldestMovie)
 
 const totalMovie = () => movies.length
 
-console.log(totalMovie)
+console.log(totalMovie())
 
 /* ESERCIZIO 11 (map)
   Scrivi una funzione per creare un array con solamente i titoli dei film contenuti nell'array fornito.
 */
+
+const movieTitle = movies.map((n) => n.Title)
+
+console.log(movieTitle)
 
 /* ESERCIZIO 12 (filter)
   Scrivi una funzione per ottenere dall'array fornito solamente i film usciti nel millennio corrente.
