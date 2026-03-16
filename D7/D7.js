@@ -65,9 +65,8 @@ console.log(numberOne)
 /* ESERCIZIO 5 (reduce)
   Scrivi una funzione per sommare i numeri contenuti in un array
 */
-variNumeri.reduce((acc, elem) => {
-  return acc + elem
-}, 0)
+const reduceVari = variNumeri.reduce((acc, elem) => acc + elem, 0)
+console.log(reduceVari)
 /* ESERCIZIO 6 (map)
   Scrivi una funzione che, dato un array di soli numeri e un numero n come parametri, ritorni un secondo array con tutti i valori del precedente incrementati di n
 */
@@ -248,13 +247,12 @@ console.log(movieTitle)
 const movie2000 = movies.filter((n) => n.Year >= 2000)
 console.log(movie2000)
 
-const movie2000title = movie2000.map((movie) => movie.Title)
-console.log(movie2000title)
-
 /* ESERCIZIO 13 (reduce)
   Scrivi una funzione per calcolare la somma di tutti gli anni in cui sono stati prodotti i film contenuti nell'array fornito.
 */
 
+const totalYearMovies = movies.reduce((acc, elem) => acc + parseInt(elem.Year), 0)
+console.log(totalYearMovies)
 /* ESERCIZIO 14 (find)
   Scrivi una funzione per ottenere dall'array fornito uno specifico film (la funzione riceve un imdbID come parametro).
 */
