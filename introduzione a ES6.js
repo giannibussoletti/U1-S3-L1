@@ -257,3 +257,44 @@ myArrayOfBeautifulPets.forEach((animali) => {
   // per avere gli elementi dell'array si usa la richiesta della funzione
   // in questo caso "animali" che da l'index dei vari elementi
 })
+
+// quindi, concludendo -> forEach è un sostituto più o meno diretto del ciclo for quando viene utilizzato
+// per ciclare gli array!
+
+// il forEach ha anche la variabile i come secondo parametro, dopo il singolo elemento,
+// in caso servisse non partire da indice 0
+
+// METODO MAP: il metodo MAP ha uno scopo specifico, serve a trasformare un array
+// in un altro array(della stessa lunghezza)
+
+const names = ["Antonio", "Camilla", "Hina", "Valeria", "Stefano", "Cristina"]
+
+// ora voglio ottenere un altro array con tutti questi nomi IN MAIUSCOLO
+
+// nella versione classica di un for sarebbe costruito così
+const uppercaseNames = []
+for (let i = 0; i < names.length; i++) {
+  // i è un numero che va da 0 a 5
+  //names[i] è il nome corrente del ciclo
+  // puscio dentro uppercaseNames l'elemento corrente
+  uppercaseNames.push(names[i].toUpperCase())
+}
+
+// con un .map():
+const againUpperCaseNames = names.map((gigio) => {
+  // gigio è il singolo nome
+  // MAP FUNZIONA COSÌ: PER OGNI nome(elemento) DEVO RITORNARE LA VERSIONE TRASFORMATA
+  return gigio.toUpperCase()
+})
+
+console.log(againUpperCaseNames) // array di lunghezza identica a names, ma ogni nome
+// è ritornato in uppercase
+
+// altro esempio: da un array di PAROLE, ritorniamo un array di SOLE INIZIALI
+const parole = ["ciao", "sono", "Stefano", "e", "insegno"]
+// voglio ottenere ['c', 's', 'S', 'e', 'i']
+
+const soloIniziali = parole.map((p) => {
+  return p.charAt(0)
+})
+// ULTRA PRO MAX VERSION -> const soloIniziali = parole.map((p) => p.charAt(0)) rifacendosi alla sintassi monoriga + return delle funzioni
