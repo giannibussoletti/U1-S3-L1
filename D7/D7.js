@@ -77,8 +77,8 @@ console.log(esSetteLog)
 /* ESERCIZIO 8 (forEach o for)
   Scrivi una funzione per creare un array contenente tutti i valori DISPARI da 1 a 99.
 */
-const oddNumber = []
 const oddNumberFunc = () => {
+  const oddNumber = []
   for (let i = 0; i < 100; i++) {
     if (i % 2 !== 0) {
       oddNumber.push(i)
@@ -234,6 +234,15 @@ console.log(movieTitle)
 /* ESERCIZIO 12 (filter)
   Scrivi una funzione per ottenere dall'array fornito solamente i film usciti nel millennio corrente.
 */
+
+const movie2000 = movies.filter((n) => {
+  if (n.Year >= 2000) {
+    return true
+  } else {
+    return false
+  }
+})
+console.log(movie2000)
 
 /* ESERCIZIO 13 (reduce)
   Scrivi una funzione per calcolare la somma di tutti gli anni in cui sono stati prodotti i film contenuti nell'array fornito.
