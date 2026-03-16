@@ -24,12 +24,18 @@ const eS1 = lettereTagliate("The Lord of the Rings: The Fellowship of the Ring",
 console.log(eS1)
 
 //Soluzione DEBRIEF lo slice me lo devo ricordare più spesso//
-const concatStrings = function (s1, s2) {
+// const concatStrings = function (s1, s2) {
+//   let result = s1.slice(0, 2) + s2.slice(-3)
+//   result = result.toUpperCase()
+//   console.log(result)
+// }
+
+const concatStrings = (s1, s2) => {
   let result = s1.slice(0, 2) + s2.slice(-3)
   result = result.toUpperCase()
-  console.log(result)
+  return result
 }
-concatStrings("bobone", "peloso") // 'BOOSO'
+console.log(concatStrings("bobone", "peloso")) // 'BOOSO'
 
 /* ESERCIZIO 2 (for)
   Scrivi una funzione che torni un array di 10 elementi; ognuno di essi deve essere un valore random compreso tra 0 e 100 (incluso).
