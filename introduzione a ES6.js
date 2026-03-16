@@ -86,7 +86,7 @@ const salutamiLungamente = function () {
 // con le parole riservate "this" "super" che approfondiremo più avanti
 
 // NB: nel caso usassimo una funzione freccia e volessimo solo ritornare il valore
-// andrebbero omesse sia le graffe sia la parola "return" esempio
+// andrebbero omesse sia le graffe {} sia la parola "return" esempio
 
 const numberOne = () => {
   32 //<--- non ritornerò il valore di 32 ma sarebbe visto come un blocco di codice
