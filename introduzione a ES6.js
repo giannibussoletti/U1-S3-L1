@@ -72,7 +72,7 @@ const moltiplica = (n1) => {
 // se una funzione freccia:
 // - è monoriga
 // - fa un return
-// ---->  SI PUò ULTERIORMENTE ACCORCIARE! SI TOGLIE LA PAROLA RETURN E SI TOLGONO LE GRAFFE
+// ---->  SI PUÒ ULTERIORMENTE ACCORCIARE! SI TOGLIE LA PAROLA RETURN E SI TOLGONO LE GRAFFE
 const moltiplicaAccorciata = (n1) => n1 * 5
 
 // altro esempio di arrow function completamente accoricata
@@ -92,3 +92,67 @@ const numberOne = () => {
   32 //<--- non ritornerò il valore di 32 ma sarebbe visto come un blocco di codice
   // andrebbe comunque messa la parola "return"
 }
+
+// NUOVO OPERATORE -> SPREAD OPERATOR --> ... (TRE PUNTI DI SPOSPENSIONE)
+// serve ad effettuare una copia di proprietà o elementida una sorgente ad una destinazione
+
+let a = 5
+let b = a // b vale 5
+a = 10
+console.log(b) // b vale comunque 5 perché b non segue la vita di a ma prende il valore di a quando è stata dichiarata sopra di lui
+
+// stesso esempio ma con entita COMPLESSE
+let objA = { value: 5 }
+let objB = objA
+
+objA.value = 10
+console.log(objB.value) // questo vale 10
+
+// quando si tratta di dati PRIMITIVI (come a e b, che erano numeri) con l'operatore =
+// JS crea una VERA COPIA della variabile
+// quando però utilizziamo l'operatore = per creare una copia di un'entità COMPLESSA, JS non DUPLICA
+// l'oggetto/array! crea semplicemente un nuovo "puntatore" per accedere alla stessa locazione di memoria
+// quindi objB = objA non duplica ma semplicemente objB punta allo stesso punto di informazioni di objA,
+//  quindi cambiare un valore in objA lo cambia automaticamente in objB perché puntano alla stessa memoria
+
+// PER CREARE OBJA E OBJB IN MODO SEPARATO, SCOLLEGATO, NON POSSIAMO RICORRERE AD objB = objA (come avremmo fatto
+// con variabili primitive)
+
+// creiamo una VERA COPIA di entità complesse tramite lo SPREAD OPERATOR
+
+const objectA = { value: 5 }
+const objectB = { ...objectA } // ho creato un nuovo "guscio" con le graffe e ci ho trasportato
+// dentro tutte le proprietà di objectA
+// d'ora in poi LE PROPRIETÀ di objectB vivono di vita propria.
+
+// sintassi alternativa allo spread operator per creare una VERA COPIA di objectA
+// utilizzando il metodo -- > Object.assign({}, objectA)
+
+// a questo punto posso modificare objectA SENZA condizionare il valore di objectB
+objectA.value = 10
+console.log(objectB.value) // 5
+
+// ESEMPIO CON GLI ARRAY
+const arrA = [5, 6, 7]
+const arrB = [...arrA] // VERA COPIA
+
+arrA.push(8) // la length di A ora è 4
+console.log(arrB.length) // 3
+
+// OBJECT DESTRUCTURING (destrutturazione degli oggetti)
+
+const cantautore = {
+  firstName: "Al",
+  lastName: "Yankovich",
+  age: 60,
+}
+
+// ora vogliamo salvare in variabili separate il nome, cognome, età di Al Bano
+// const firstName = cantautore. firstName
+// const lastName = cantautore.lastName
+// const age = cantautore.age
+
+// L'OBJECT DESTRUCTURING ci fornisce una scorciatoia
+const { firstName, lastName, age } = cantautore
+// questa scorciatoia crea direttamente delle variabili con il nome delle chiavi
+// all'interno dell'oggetto andandole ad estrarre in una nuova variabile
