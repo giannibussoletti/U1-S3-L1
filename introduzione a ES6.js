@@ -248,3 +248,12 @@ for (let i = 0; i < myArrayOfBeautifulPets.length; i++) {
 
 // NUOVI METODI DEGLI ARRAY, INTRODOTTI CON ES6
 // forEach(), map(), filter(), reduce()
+
+// FOREACH
+//.forEach() è un metodo degli array che ci permette di CICLARE un array senza il for.
+myArrayOfBeautifulPets.forEach((animali) => {
+  console.log(animali) // ripete quello che c'è all'interno della funzione
+  // per tutta la length dell'array
+  // per avere gli elementi dell'array si usa la richiesta della funzione
+  // in questo caso "animali" che da l'index dei vari elementi
+})
