@@ -202,6 +202,8 @@ unaStringa.charAt(2) // prende il singolo carattere nella frase --> "I" tramite 
 unaStringa.split(" " /* "i" ","*/) // trasforma la stringa in un array usando i simboli dati
 // come proprietà, in questo caso lo spazio, ma potrebbe essere
 // anche una lettera o un simbolo speciale
+unaStringa.length // trasforma le singole stringhe nell'array in numeri
+// che sono il totale dei singoli caratteri di quell'array
 
 // startsWith(), endsWith(), includes() sono metodi delle stringe
 // che ritornano una valore booleano
@@ -311,3 +313,16 @@ const arrayFiltrato = names.filter((name) => {
     return false
   }
 })
+
+// METODO REDUCE
+// il metodo reduce() riduce un array in un singolo valore.
+
+const variNumeri = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+variNumeri.reduce((acc, elem) => {
+  return acc + elem
+  //   acc comincia da zero
+  // al primo giro, ritorno (acc)0+(elem)1
+  // al primo giro, ritorno (acc)1+(elem)2
+  // al primo giro, ritorno (acc)2+(elem)3
+}, 0)

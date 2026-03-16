@@ -23,6 +23,14 @@ const lettereTagliate = (str1, str2) => {
 const eS1 = lettereTagliate("The Lord of the Rings: The Fellowship of the Ring", "Lords of Dogtown")
 console.log(eS1)
 
+//Soluzione DEBRIEF lo slice me lo devo ricordare più spesso//
+const concatStrings = function (s1, s2) {
+  let result = s1.slice(0, 2) + s2.slice(-3)
+  result = result.toUpperCase()
+  console.log(result)
+}
+concatStrings("bobone", "peloso") // 'BOOSO'
+
 /* ESERCIZIO 2 (for)
   Scrivi una funzione che torni un array di 10 elementi; ognuno di essi deve essere un valore random compreso tra 0 e 100 (incluso).
 */
@@ -57,7 +65,9 @@ console.log(numberOne)
 /* ESERCIZIO 5 (reduce)
   Scrivi una funzione per sommare i numeri contenuti in un array
 */
-
+variNumeri.reduce((acc, elem) => {
+  return acc + elem
+}, 0)
 /* ESERCIZIO 6 (map)
   Scrivi una funzione che, dato un array di soli numeri e un numero n come parametri, ritorni un secondo array con tutti i valori del precedente incrementati di n
 */
@@ -235,14 +245,11 @@ console.log(movieTitle)
   Scrivi una funzione per ottenere dall'array fornito solamente i film usciti nel millennio corrente.
 */
 
-const movie2000 = movies.filter((n) => {
-  if (n.Year >= 2000) {
-    return true
-  } else {
-    return false
-  }
-})
+const movie2000 = movies.filter((n) => n.Year >= 2000)
 console.log(movie2000)
+
+const movie2000title = movie2000.map((movie) => movie.Title)
+console.log(movie2000title)
 
 /* ESERCIZIO 13 (reduce)
   Scrivi una funzione per calcolare la somma di tutti gli anni in cui sono stati prodotti i film contenuti nell'array fornito.
